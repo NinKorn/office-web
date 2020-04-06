@@ -1,20 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import home from '../views/home/index.vue'
+import store from '../views/productCenter/store/index.vue'
+import cloudCode from '../views/productCenter/cloudCode/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home,
+        name: 'home',
+        component: home,
     },
-    //   {
-    //     path: '/about',
-    //     name: 'About',
-    //     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    //   }
+    {
+        name: 'store',
+        component: store,
+        path: '/store',
+    },
+    {
+        name: 'cloudCode',
+        path: '/cloudCode',
+        component: cloudCode,
+    },
 ]
 
 const router = new VueRouter({

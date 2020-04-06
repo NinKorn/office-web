@@ -1,31 +1,61 @@
 <template>
-    <div id="app">
-        <div id="nav">
-            <router-link to="/">Home</router-link>
+    <div>
+        <div class="header">
+            <div class="nav-menu">
+                <div class="logo">LOGO</div>
+                <navMenu></navMenu>
+            </div>
         </div>
-        <router-view />
+        <div class="main-body">
+            <router-view />
+        </div>
+        <footerMenu></footerMenu>
     </div>
 </template>
+<script>
+import navMenu from '@/components/navMenu.vue'
+import footerMenu from '@/components/footer.vue'
+export default {
+    name: 'App',
+    components: { navMenu, footerMenu },
+    data() {
+        return {}
+    },
+    mounted() {},
+    computed: {},
+    methods: {}
+}
+</script>
 
 <style lang="less">
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+*,
+html,
+body {
+    padding: 0;
+    margin: 0;
 }
-
-#nav {
-    padding: 30px;
-
-    a {
-        font-weight: bold;
-        color: #2c3e50;
-
-        &.router-link-exact-active {
-            color: #42b983;
+.header {
+    width: 100%;
+    min-height: 300px;
+    background-color: #000;
+    color: #fff;
+    .nav-menu {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        position: absolute;
+        .logo {
+            width: 15%;
+            background-color: #fff;
+            color: #000;
+        }
+        .el-menu {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0);
         }
     }
+}
+.main-body {
+    min-height: 100px;
 }
 </style>
