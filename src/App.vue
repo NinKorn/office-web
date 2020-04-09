@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="header">
+            <img alt src="@/assets/mo.jpg" />
             <div class="nav-menu">
                 <div class="logo">LOGO</div>
                 <navMenu></navMenu>
@@ -36,10 +37,16 @@ body {
 }
 .header {
     width: 100%;
-    min-height: 300px;
+    // min-height: 300px;
     background-color: #000;
     color: #fff;
+    img {
+        width: 100%;
+    }
     .nav-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
         display: flex;
         justify-content: flex-start;
         width: 100%;
